@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './PageHero.css'
 
 const BG_IMAGES = {
@@ -14,23 +15,19 @@ export default function PageHero({ eyebrow, title, subtitle, bg = 'default' }) {
   return (
     <section className="page-hero" aria-label={title}>
 
-      {/* Bandeau image — visible, ratio cinématique */}
-      <div className="page-hero-band" aria-hidden="true">
-        <img
-          src={imgSrc}
-          alt=""
-          className="page-hero-band-img"
-        />
-        <div className="page-hero-band-overlay" />
-      </div>
+      {/* Image de fond */}
+      <img src={imgSrc} alt="" className="page-hero-img" aria-hidden="true" />
 
-      {/* Corps blanc — même pattern que la page d'accueil */}
-      <div className="page-hero-body">
+      {/* Overlay navy renforcé */}
+      <div className="page-hero-overlay" aria-hidden="true" />
+
+      {/* Texte directement sur l'image */}
+      <div className="page-hero-content">
         <div className="container">
 
           {/* Fil d'Ariane */}
           <nav className="page-hero-breadcrumb" aria-label="Fil d'Ariane">
-            <a href="/">Accueil</a>
+            <Link to="/">Accueil</Link>
             <span className="sep" aria-hidden="true">/</span>
             <span className="current">{eyebrow}</span>
           </nav>

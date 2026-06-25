@@ -1,42 +1,46 @@
-/* ── PageHero — même structure que le Hero de l'accueil ── */
+/* ── PageHero — bandeau image avec texte superposé ── */
 .page-hero {
-  background: var(--white);
-}
-
-/* Bandeau image — ratio cinématique, pleine largeur, image visible */
-.page-hero-band {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 5;
+  aspect-ratio: 16 / 6;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
-.page-hero-band-img {
+
+/* Image de fond */
+.page-hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
   display: block;
 }
-.page-hero-band-overlay {
+
+/* Overlay navy renforcé — image identifiable mais clairement en second plan */
+.page-hero-overlay {
   position: absolute;
   inset: 0;
-  /* Léger, identique au hero-band-overlay de l'accueil */
   background: linear-gradient(
     to bottom,
-    rgba(8,20,46,0.04) 0%,
-    rgba(8,20,46,0.00) 50%,
-    rgba(8,20,46,0.18) 100%
+    rgba(10, 31, 68, 0.42) 0%,
+    rgba(10, 31, 68, 0.58) 60%,
+    rgba(10, 31, 68, 0.72) 100%
   );
 }
 
-/* Corps blanc — identique au hero-body de l'accueil */
-.page-hero-body {
-  background: var(--white);
-  padding: 48px 0 44px;
-  border-bottom: 1px solid var(--border);
+/* Contenu texte — aligné en bas de l'image */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 48px;
+  padding-top: 80px; /* espace sous la navbar fixe */
 }
 
-/* Fil d'Ariane — discret, sur fond blanc */
+/* Fil d'Ariane */
 .page-hero-breadcrumb {
   display: flex;
   align-items: center;
@@ -46,19 +50,20 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 20px;
+  text-decoration: none;
 }
 .page-hero-breadcrumb a {
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
-.page-hero-breadcrumb a:hover { color: var(--blue); }
-.page-hero-breadcrumb .sep { color: var(--border); }
-.page-hero-breadcrumb .current { color: var(--text-mid); }
+.page-hero-breadcrumb a:hover { color: rgba(255, 255, 255, 1); }
+.page-hero-breadcrumb .sep { color: rgba(255, 255, 255, 0.35); }
+.page-hero-breadcrumb .current { color: rgba(255, 255, 255, 0.85); }
 
-/* Eyebrow — identique au hero-eyebrow de l'accueil */
+/* Eyebrow */
 .page-hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -68,8 +73,8 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
 }
 .page-hero-eyebrow-dot {
   width: 6px;
@@ -80,37 +85,38 @@
   animation: pulse-dot-page 2.4s ease-in-out infinite;
 }
 @keyframes pulse-dot-page {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
-  50%       { box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(201, 168, 76, 0); }
 }
 
-/* Titre — identique au hero-title de l'accueil */
+/* Titre H1 */
 .page-hero-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--navy);
-  margin-bottom: 14px;
+  color: var(--white);
+  margin-bottom: 12px;
   letter-spacing: -0.01em;
   max-width: 760px;
 }
 
-/* Sous-titre — identique au hero-sub de l'accueil */
+/* Sous-titre */
 .page-hero-sub {
   font-size: 1rem;
-  color: var(--text-mid);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.7;
   font-style: italic;
-  max-width: 680px;
+  max-width: 640px;
 }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .page-hero-band { aspect-ratio: 16 / 7; }
-  .page-hero-body { padding: 36px 0 32px; }
+  .page-hero { aspect-ratio: 16 / 8; }
+  .page-hero-content { padding-bottom: 36px; padding-top: 72px; }
 }
 @media (max-width: 600px) {
-  .page-hero-band { aspect-ratio: 4 / 3; }
-  .page-hero-body { padding: 28px 0 28px; }
+  .page-hero { aspect-ratio: 4 / 3; }
+  .page-hero-content { padding-bottom: 28px; padding-top: 64px; }
+  .page-hero-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
 }
