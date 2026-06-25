@@ -1,6 +1,6 @@
 # ACI Aviation — Site web
 
-Site officiel d'**Aviation Consulting International Ltd** — développé en React + Vite, hébergé sur Cloudflare Pages.
+Site officiel d'**Aviation Consulting International Ltd** — développé en React + Vite.
 
 ---
 
