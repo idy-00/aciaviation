@@ -8,8 +8,8 @@ export default function ActualitesHero() {
       {/* Image pleine largeur avec découpe diagonale */}
       <div className="actu-hero-img-wrap">
         <img
-          src="/airlines-ops.jpg"
-          alt="Opérations compagnies aériennes"
+          src="/actualites-hero.jpg"
+          alt="Séminaire et conférence professionnelle"
           className="actu-hero-img"
         />
         {/* Card texte centrée sur l'image */}

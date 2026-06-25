@@ -54,8 +54,9 @@
 
 .clients-img-col img {
   width: 100%;
-  height: 560px;
+  height: 260px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 3px;
   display: block;
 }

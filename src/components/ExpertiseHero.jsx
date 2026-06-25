@@ -8,15 +8,14 @@ export default function ExpertiseHero() {
       {/* Photo cockpit — colonne gauche */}
       <div className="expertise-hero-img-col">
         <img
-          src="/air-operations.jpg"
-          alt="Cockpit — instruments de bord et main du pilote"
+          src="/expertise-hero.jpg"
+          alt="Pilotes en cockpit — opérations aériennes"
           className="expertise-hero-img"
         />
-        {/* Ligne dorée décorative verticale */}
         <div className="expertise-hero-line" aria-hidden="true" />
       </div>
 
-      {/* Texte — colonne droite sur fond navy */}
+      {/* Texte — colonne droite sur fond BLANC */}
       <div className="expertise-hero-text-col">
         <nav className="expertise-hero-breadcrumb" aria-label="Fil d'Ariane">
           <Link to="/">Accueil</Link>

@@ -1,6 +1,11 @@
-import './ActualitesPage.css'
-import ActualitesHero from '../components/ActualitesHero'
 import { Link } from 'react-router-dom'
+import ActualitesHero from '../components/ActualitesHero'
+import { actualites } from '../data/actualites'
+import './ActualitesPage.css'
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
 
 export default function ActualitesPage() {
   return (
@@ -8,23 +13,29 @@ export default function ActualitesPage() {
       <ActualitesHero />
       <section className="section actualites-section">
         <div className="container">
-          <div className="actualites-empty">
-            <div className="actualites-empty-icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
-              </svg>
+          {actualites.length === 0 ? (
+            <div className="actualites-empty">
+              <p>Aucune actualité pour le moment. Revenez bientôt.</p>
+              <Link to="/contact" className="btn btn-primary actualites-cta">Nous contacter</Link>
             </div>
-            <h2 className="actualites-empty-title">Actualités à venir</h2>
-            <p>
-              Cette page sera alimentée prochainement avec les événements réalisés et les séminaires à venir.<br />
-              Revenez bientôt pour consulter les dernières actualités d&apos;ACI.
-            </p>
-            <Link to="/contact" className="btn btn-primary actualites-cta">
-              Nous contacter pour une question
-            </Link>
-          </div>
+          ) : (
+            <div className="actu-grid">
+              {actualites.map((a, i) => (
+                <Link to={`/actualites/${a.slug}`} key={a.slug} className={`actu-card${i === 0 ? ' actu-card--featured' : ''}`}>
+                  <div className="actu-card-img-wrap">
+                    <img src={a.image} alt={a.titre} loading={i === 0 ? 'eager' : 'lazy'} />
+                    <span className="actu-card-cat">{a.categorie}</span>
+                  </div>
+                  <div className="actu-card-body">
+                    <time className="actu-card-date">{formatDate(a.date)}</time>
+                    <h2 className="actu-card-title">{a.titre}</h2>
+                    <p className="actu-card-resume">{a.resume}</p>
+                    <span className="actu-card-lire">Lire l'article →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

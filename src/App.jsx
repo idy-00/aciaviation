@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import ExpertisePage from './pages/ExpertisePage'
 import ClientsPartenairesPage from './pages/ClientsPartenairesPage'
 import ActualitesPage from './pages/ActualitesPage'
+import ActualiteDetailPage from './pages/ActualiteDetailPage'
 import ContactPage from './pages/ContactPage'
 
 function ScrollToTop() {
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/expertise"             element={<ExpertisePage />} />
           <Route path="/clients-partenaires"   element={<ClientsPartenairesPage />} />
           <Route path="/actualites"            element={<ActualitesPage />} />
+          <Route path="/actualites/:slug"      element={<ActualiteDetailPage />} />
           <Route path="/contact"               element={<ContactPage />} />
           {/* Anciens chemins redirigés pour compatibilité */}
           <Route path="/clients"               element={<ClientsPartenairesPage />} />

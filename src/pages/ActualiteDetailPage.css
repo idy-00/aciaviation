@@ -1,0 +1,205 @@
+.detail-page { background: #f5f6f8; min-height: 100vh; }
+
+/* Hero */
+.detail-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 480px;
+}
+.detail-hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+.detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,20,46,0.05) 0%, rgba(8,20,46,0.22) 100%);
+}
+
+/* Layout 2 colonnes */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+
+/* Article */
+.detail-article {
+  background: var(--white);
+  border: 1px solid #e2e5eb;
+  border-radius: 4px;
+  padding: 48px 52px;
+}
+
+.detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.detail-breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.detail-breadcrumb a:hover { color: var(--blue); }
+.detail-breadcrumb span { color: var(--border); }
+.detail-breadcrumb span:last-child { color: var(--text-mid); }
+
+.detail-cat {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.detail-date {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.detail-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.detail-resume {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 3px solid var(--gold);
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.detail-divider {
+  border: none;
+  border-top: 1px solid #e2e5eb;
+  margin: 32px 0;
+}
+
+.detail-body p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.detail-body p:last-child { margin-bottom: 0; }
+
+.detail-back {
+  display: inline-block;
+  margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.detail-back:hover { color: var(--gold); }
+
+/* Sidebar */
+.detail-sidebar { position: sticky; top: 88px; }
+
+.detail-sidebar-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.detail-side-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid #e2e5eb;
+  border-radius: 4px;
+  padding: 14px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+}
+.detail-side-card:hover { box-shadow: 0 4px 16px rgba(8,20,46,0.08); }
+.detail-side-card img {
+  width: 80px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.detail-side-cat {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.detail-side-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.detail-side-date {
+  font-size: 10px;
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-article { padding: 32px 24px; }
+  .detail-sidebar { position: static; }
+}
+@media (max-width: 600px) {
+  .detail-hero-img { height: 260px; }
+  .detail-article { padding: 24px 16px; }
+}
