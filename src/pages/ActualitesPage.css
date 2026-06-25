@@ -1,0 +1,29 @@
+.actualites-section { background: var(--bg); }
+
+.actualites-empty {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 24px;
+}
+.actualites-empty-icon {
+  color: var(--border);
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+.actualites-empty-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.actualites-empty p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.actualites-cta {
+  margin-top: 24px;
+}

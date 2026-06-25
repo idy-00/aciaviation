@@ -1,0 +1,162 @@
+.hero-section {
+  background: var(--white);
+}
+
+/* ── Bandeau image : hauteur naturelle = avion complet visible ── */
+.hero-band {
+  position: relative;
+  width: 100%;
+  /*
+   * Pas de height fixe : la hauteur suit le ratio naturel de l'image (1778×532).
+   * À 1440px de large → 431px de haut → cockpit à y=79px, roues à y=407px.
+   * La navbar fixe (~64px) flotte sur la zone ciel (y 0→79px), entièrement neutre.
+   * Résultat : avion face avant complet visible — cockpit, fuselage, ailes, trains, roues.
+   */
+}
+.hero-band-img {
+  width: 100%;
+  height: auto;     /* hauteur proportionnelle à la largeur — aucun recadrage */
+  display: block;
+  min-height: 160px;/* sécurité mobile */
+}
+.hero-band-overlay {
+  position: absolute;
+  inset: 0;
+  /* Très léger : ne pas écraser les détails de l'avion */
+  background: linear-gradient(
+    to bottom,
+    rgba(8,20,46,0.04) 0%,
+    rgba(8,20,46,0.00) 50%,
+    rgba(8,20,46,0.18) 100%
+  );
+}
+
+/* ── Corps texte : fond blanc/bleu ── */
+.hero-body {
+  background: var(--white);
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  max-width: 760px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* outline navy — sur fond blanc */
+.btn-outline-navy {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 3px;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-outline-navy:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ── Bande référentiels ── */
+.hero-refs {
+  background: var(--navy);
+  border-top: 3px solid var(--gold);
+}
+.hero-refs-inner {
+  display: flex;
+}
+.hero-ref {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 22px 32px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.hero-ref:last-child { border-right: none; }
+.hero-ref-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.hero-ref-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-band { height: 22vh; min-height: 150px; }
+  .hero-body { padding: 40px 0 36px; }
+  .hero-refs-inner { flex-wrap: wrap; }
+  .hero-ref { min-width: 50%; padding: 16px 20px; }
+}
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions a { width: 100%; justify-content: center; }
+  .hero-ref { min-width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+}

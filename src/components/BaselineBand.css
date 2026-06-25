@@ -1,0 +1,30 @@
+.baseline-band {
+  background: var(--blue);
+  padding: 18px 0;
+}
+.baseline-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+.baseline-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  padding: 0 10px;
+}
+.baseline-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  flex-shrink: 0;
+}

@@ -1,0 +1,62 @@
+.missions-section { background: var(--bg); }
+
+.missions-lead {
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mission-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.mission-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--blue-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--blue);
+}
+.mission-item h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.mission-item p {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+.missions-img-col img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .missions-grid { grid-template-columns: 1fr; gap: 40px; }
+  .missions-img-col img { height: 280px; }
+}

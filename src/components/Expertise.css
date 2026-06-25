@@ -1,0 +1,57 @@
+.expertise-section { background: var(--navy); }
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.expertise-card {
+  background: var(--navy-mid);
+  padding: 36px 32px;
+  transition: background var(--transition);
+}
+.expertise-card:hover { background: var(--blue); }
+
+.expertise-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: rgba(24,120,192,0.18);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #6ab4e8;
+  transition: background var(--transition), color var(--transition);
+}
+.expertise-card:hover .expertise-icon-wrap {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+.expertise-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.expertise-card p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.7;
+  transition: color var(--transition);
+}
+.expertise-card:hover p { color: rgba(255,255,255,0.85); }
+
+@media (max-width: 1024px) {
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .expertise-grid { grid-template-columns: 1fr; }
+  .expertise-card { padding: 28px 24px; }
+}
