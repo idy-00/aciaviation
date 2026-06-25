@@ -1,0 +1,125 @@
+/* ── Clients Hero — image pleine largeur + bloc texte blanc dessous ── */
+.clients-hero {
+  margin-top: 68px;
+}
+
+/* Image */
+.clients-hero-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.clients-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-position: center 40%;
+  min-height: 200px;
+}
+/* Overlay très léger — photo lumineuse, quasi brute */
+.clients-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,20,46,0.03) 0%,
+    rgba(8,20,46,0.00) 50%,
+    rgba(8,20,46,0.14) 100%
+  );
+}
+
+/* Bloc texte blanc */
+.clients-hero-body {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.clients-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 36px;
+}
+
+/* Colonne gauche */
+.clients-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+.clients-hero-breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.clients-hero-breadcrumb a:hover { color: var(--blue); }
+.clients-hero-breadcrumb span:last-child { color: var(--text-mid); }
+
+.clients-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.clients-hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: pulse-clients 2.4s ease-in-out infinite;
+}
+@keyframes pulse-clients {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+}
+
+.clients-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Colonne droite */
+.clients-hero-sub {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+}
+
+/* Trait doré bas de bloc */
+.clients-hero-rule {
+  height: 3px;
+  background: linear-gradient(to right, var(--gold) 0%, transparent 60%);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .clients-hero { margin-top: 62px; }
+  .clients-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 32px;
+    padding-bottom: 28px;
+  }
+  .clients-hero-sub { border-left: none; padding-left: 0; }
+}

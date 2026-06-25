@@ -1,16 +1,11 @@
 import './ActualitesPage.css'
-import PageHero from '../components/PageHero'
+import ActualitesHero from '../components/ActualitesHero'
 import { Link } from 'react-router-dom'
 
 export default function ActualitesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Actualités"
-        title="Événements & Actualités ACI"
-        subtitle="Retrouvez ici les événements réalisés, les séminaires à venir et les actualités d'Aviation Consulting International."
-        bg="actualites"
-      />
+      <ActualitesHero />
       <section className="section actualites-section">
         <div className="container">
           <div className="actualites-empty">

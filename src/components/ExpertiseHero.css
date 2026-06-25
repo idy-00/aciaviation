@@ -1,0 +1,142 @@
+/* ── Expertise Hero — split photo/texte ── */
+.expertise-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  margin-top: 68px; /* hauteur navbar */
+}
+
+/* Colonne image */
+.expertise-hero-img-col {
+  position: relative;
+  overflow: hidden;
+}
+.expertise-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+  display: block;
+}
+/* Ligne dorée verticale sur le bord droit */
+.expertise-hero-line {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 3px;
+  height: 80%;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+
+/* Colonne texte — fond navy */
+.expertise-hero-text-col {
+  background: var(--navy);
+  padding: 56px 56px 56px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Breadcrumb */
+.expertise-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 28px;
+}
+.expertise-hero-breadcrumb a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.expertise-hero-breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+.expertise-hero-breadcrumb span:last-child { color: rgba(255,255,255,0.7); }
+
+/* Eyebrow */
+.expertise-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.expertise-hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: pulse-expertise 2.4s ease-in-out infinite;
+}
+@keyframes pulse-expertise {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.6); }
+  50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0); }
+}
+
+/* Titre */
+.expertise-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+/* Sous-titre */
+.expertise-hero-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 420px;
+}
+
+/* Badges */
+.expertise-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.expertise-hero-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .expertise-hero {
+    grid-template-columns: 1fr;
+    margin-top: 62px;
+  }
+  .expertise-hero-img-col {
+    height: 280px;
+  }
+  .expertise-hero-line { display: none; }
+  .expertise-hero-text-col {
+    padding: 40px 28px;
+  }
+}
+@media (max-width: 600px) {
+  .expertise-hero-img-col { height: 220px; }
+  .expertise-hero-text-col { padding: 32px 20px; }
+}
