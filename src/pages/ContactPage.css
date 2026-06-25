@@ -1,0 +1,71 @@
+/* Header navy plein — sans photo, identité propre à Contact */
+.contact-page-header {
+  background: var(--navy);
+  padding: 100px 0 52px; /* 100px : espace sous navbar fixe */
+  border-bottom: 3px solid var(--gold);
+}
+
+.contact-page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.contact-page-breadcrumb a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-page-breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+.contact-page-breadcrumb span:last-child { color: rgba(255,255,255,0.8); }
+
+.contact-page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.contact-page-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: pulse-contact 2.4s ease-in-out infinite;
+}
+@keyframes pulse-contact {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+}
+
+.contact-page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  max-width: 620px;
+}
+
+.contact-page-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 560px;
+}

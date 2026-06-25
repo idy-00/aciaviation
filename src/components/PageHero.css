@@ -2,42 +2,59 @@
 .page-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
 }
 
-/* Image de fond */
 .page-hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
   display: block;
 }
 
-/* Overlay navy renforcé — image identifiable mais clairement en second plan */
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 31, 68, 0.42) 0%,
-    rgba(10, 31, 68, 0.58) 60%,
-    rgba(10, 31, 68, 0.72) 100%
-  );
 }
 
-/* Contenu texte — aligné en bas de l'image */
+/* Contenu texte */
 .page-hero-content {
   position: relative;
   z-index: 2;
   width: 100%;
   padding-bottom: 48px;
-  padding-top: 80px; /* espace sous la navbar fixe */
+  padding-top: 80px;
+}
+
+/* Alignement gauche (défaut) */
+.page-hero--left .page-hero-content .container {
+  text-align: left;
+}
+.page-hero--left .page-hero-breadcrumb {
+  justify-content: flex-start;
+}
+.page-hero--left .page-hero-eyebrow {
+  justify-content: flex-start;
+}
+
+/* Alignement centré (expertise) */
+.page-hero--center .page-hero-content .container {
+  text-align: center;
+}
+.page-hero--center .page-hero-breadcrumb {
+  justify-content: center;
+}
+.page-hero--center .page-hero-eyebrow {
+  justify-content: center;
+}
+.page-hero--center .page-hero-title,
+.page-hero--center .page-hero-sub {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Fil d'Ariane */
@@ -50,18 +67,17 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255,255,255,0.65);
   margin-bottom: 20px;
-  text-decoration: none;
 }
 .page-hero-breadcrumb a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
-.page-hero-breadcrumb a:hover { color: rgba(255, 255, 255, 1); }
-.page-hero-breadcrumb .sep { color: rgba(255, 255, 255, 0.35); }
-.page-hero-breadcrumb .current { color: rgba(255, 255, 255, 0.85); }
+.page-hero-breadcrumb a:hover { color: rgba(255,255,255,1); }
+.page-hero-breadcrumb .sep   { color: rgba(255,255,255,0.35); }
+.page-hero-breadcrumb .current { color: rgba(255,255,255,0.85); }
 
 /* Eyebrow */
 .page-hero-eyebrow {
@@ -73,7 +89,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
   margin-bottom: 16px;
 }
 .page-hero-eyebrow-dot {
@@ -85,8 +101,8 @@
   animation: pulse-dot-page 2.4s ease-in-out infinite;
 }
 @keyframes pulse-dot-page {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.55); }
-  50%       { box-shadow: 0 0 0 5px rgba(201, 168, 76, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(201,168,76,0); }
 }
 
 /* Titre H1 */
@@ -104,7 +120,7 @@
 /* Sous-titre */
 .page-hero-sub {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255,255,255,0.82);
   line-height: 1.7;
   font-style: italic;
   max-width: 640px;
@@ -112,11 +128,17 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .page-hero { aspect-ratio: 16 / 8; }
+  .page-hero { aspect-ratio: 16 / 8 !important; }
   .page-hero-content { padding-bottom: 36px; padding-top: 72px; }
+  /* tout repassé aligné à gauche sur tablette */
+  .page-hero--center .page-hero-content .container { text-align: left; }
+  .page-hero--center .page-hero-breadcrumb { justify-content: flex-start; }
+  .page-hero--center .page-hero-eyebrow   { justify-content: flex-start; }
+  .page-hero--center .page-hero-title,
+  .page-hero--center .page-hero-sub { margin-left: 0; margin-right: 0; }
 }
 @media (max-width: 600px) {
-  .page-hero { aspect-ratio: 4 / 3; }
+  .page-hero { aspect-ratio: 4 / 3 !important; }
   .page-hero-content { padding-bottom: 28px; padding-top: 64px; }
   .page-hero-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
 }
