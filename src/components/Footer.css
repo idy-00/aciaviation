@@ -126,10 +126,18 @@
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
 }
-.footer-legal-placeholder {
+.footer-legal-list li span:not(.footer-legal-label) {
   font-size: 11.5px;
-  color: rgba(255,255,255,0.25);
-  font-style: italic;
+  color: rgba(255,255,255,0.65);
+}
+.footer-legal-entity {
+  display: block;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2px;
 }
 
 /* Bottom bar */

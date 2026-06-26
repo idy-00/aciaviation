@@ -95,8 +95,12 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Informations légales</h4>
             <ul className="footer-legal-list">
-              <li><span className="footer-legal-label">RC</span><span className="footer-legal-placeholder">[RC à compléter]</span></li>
-              <li><span className="footer-legal-label">NINEA</span><span className="footer-legal-placeholder">[NINEA à compléter]</span></li>
+              <li className="footer-legal-entity">
+                Aviation Consulting International — SUARL<br />
+                Capital social : 1&nbsp;000&nbsp;000 FCFA
+              </li>
+              <li><span className="footer-legal-label">RC</span><span>SN DKR 2011 B 3530</span></li>
+              <li><span className="footer-legal-label">NINEA</span><span>0043530752R2</span></li>
             </ul>
           </div>
 
