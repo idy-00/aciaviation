@@ -2,11 +2,20 @@
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 1px;
   background: rgba(255,255,255,0.07);
   border-radius: 4px;
   overflow: hidden;
+}
+
+/* Carte mise en avant — occupe 2 lignes */
+.value-card--featured {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .value-card {
@@ -19,6 +28,23 @@
 .value-card:hover {
   background: rgba(255,255,255,0.04);
   border-top-color: var(--gold);
+}
+
+/* Icône */
+.value-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(201,168,76,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+  transition: background var(--transition);
+}
+.value-card:hover .value-icon {
+  background: rgba(201,168,76,0.22);
 }
 
 .value-num {
@@ -53,8 +79,25 @@
   line-height: 1.7;
 }
 
+/* Carte featured — titre plus grand */
+.value-card--featured h3 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+.value-card--featured p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.62);
+}
+.value-card--featured .value-num {
+  font-size: 3.5rem;
+}
+
 @media (max-width: 1024px) {
-  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: unset;
+  }
+  .value-card--featured { grid-row: unset; }
 }
 @media (max-width: 600px) {
   .values-grid { grid-template-columns: 1fr; }

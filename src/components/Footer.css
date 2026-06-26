@@ -11,22 +11,25 @@
   margin-bottom: 48px;
 }
 
-/* Logo complet — encart blanc pour que les couleurs réelles ressortent sur fond sombre */
+/* Logo — fond blanc minimal, juste ce qu'il faut pour la lisibilité */
 .footer-logo-link {
   display: inline-block;
-  background: var(--white);
-  border-radius: 4px;
-  padding: 10px 16px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 6px;
+  padding: 8px 12px;
   margin-bottom: 18px;
   line-height: 0;
+  transition: background 0.2s;
+}
+.footer-logo-link:hover {
+  background: rgba(255,255,255,1);
 }
 .footer-logo-img {
-  height: 68px;      /* assez grand pour que le slogan soit lisible */
+  height: 56px;
   width: auto;
-  max-width: 300px;
+  max-width: 260px;
   object-fit: contain;
   display: block;
-  /* PAS de filter — couleurs originales préservées */
 }
 
 .footer-brand p {

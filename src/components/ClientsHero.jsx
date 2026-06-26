@@ -19,6 +19,7 @@ export default function ClientsHero() {
             Nous accompagnons administrations, aéroports, compagnies aériennes et tous les acteurs du secteur aéronautique dans le renforcement de leur sécurité et sûreté.
           </p>
         </div>
+        <div className="clients-hero-rule" aria-hidden="true" />
       </div>
     </section>
   )

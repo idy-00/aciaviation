@@ -1,13 +1,13 @@
 import './Contact.css'
 import '../components/ui.css'
-import { Phone, Mail, Clock, MapPin } from 'lucide-react'
+import { Mail, Clock, MapPin } from 'lucide-react'
 
 export default function Contact({ noHero } = {}) {
   return (
     <section id="contact" className="section contact-section">
       <div className="container contact-grid">
 
-        {/* Informations de contact */}
+        {/* Informations de contexte — siège + délai uniquement, pas de doublon */}
         <div className="contact-info">
           {!noHero && (
             <>
@@ -30,27 +30,6 @@ export default function Contact({ noHero } = {}) {
             </div>
 
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true"><Phone size={17} strokeWidth={2} /></div>
-              <div className="contact-item-text">
-                <span className="contact-item-label">Téléphone</span>
-                <a href="tel:+221338580004">+221 33 858 00 04</a>
-                <a href="tel:+221776251295">+221 77 625 12 95</a>
-                <a href="https://wa.me/221777678186" target="_blank" rel="noopener noreferrer" className="contact-whatsapp">
-                  <WhatsAppIcon />
-                  +221 77 767 81 86 <span className="contact-wa-label">WhatsApp</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true"><Mail size={17} strokeWidth={2} /></div>
-              <div className="contact-item-text">
-                <span className="contact-item-label">Email</span>
-                <a href="mailto:contact@aci-aviation.com">contact@aci-aviation.com</a>
-              </div>
-            </div>
-
-            <div className="contact-item">
               <div className="contact-item-icon" aria-hidden="true"><Clock size={17} strokeWidth={2} /></div>
               <div className="contact-item-text">
                 <span className="contact-item-label">Délai de réponse</span>
@@ -60,9 +39,9 @@ export default function Contact({ noHero } = {}) {
           </div>
         </div>
 
-        {/* Actions directes — remplace le formulaire */}
+        {/* 3 cartes d'action — chacune porte directement son numéro/email */}
         <div className="contact-actions-wrap">
-          <h3 className="contact-actions-title">Nous contacter directement</h3>
+          <h3 className="contact-actions-title">Nous contacter</h3>
           <p className="contact-actions-sub">
             Choisissez le canal qui vous convient — nous répondons sous 48h ouvrables.
           </p>
@@ -71,15 +50,13 @@ export default function Contact({ noHero } = {}) {
 
             <a href="tel:+221338580004" className="contact-action-card">
               <div className="contact-action-card-icon contact-action-card-icon--blue">
-                <Phone size={22} strokeWidth={1.8} />
+                <PhoneIcon />
               </div>
               <div className="contact-action-card-body">
                 <span className="contact-action-card-label">Appeler</span>
                 <span className="contact-action-card-value">+221 33 858 00 04</span>
               </div>
-              <div className="contact-action-card-arrow" aria-hidden="true">
-                <ArrowRight />
-              </div>
+              <div className="contact-action-card-arrow" aria-hidden="true"><ArrowRight /></div>
             </a>
 
             <a
@@ -95,9 +72,7 @@ export default function Contact({ noHero } = {}) {
                 <span className="contact-action-card-label">WhatsApp</span>
                 <span className="contact-action-card-value">+221 77 767 81 86</span>
               </div>
-              <div className="contact-action-card-arrow" aria-hidden="true">
-                <ArrowRight />
-              </div>
+              <div className="contact-action-card-arrow" aria-hidden="true"><ArrowRight /></div>
             </a>
 
             <a href="mailto:contact@aci-aviation.com" className="contact-action-card">
@@ -108,9 +83,7 @@ export default function Contact({ noHero } = {}) {
                 <span className="contact-action-card-label">Envoyer un email</span>
                 <span className="contact-action-card-value">contact@aci-aviation.com</span>
               </div>
-              <div className="contact-action-card-arrow" aria-hidden="true">
-                <ArrowRight />
-              </div>
+              <div className="contact-action-card-arrow" aria-hidden="true"><ArrowRight /></div>
             </a>
 
           </div>
@@ -125,6 +98,14 @@ function ArrowRight() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
       <path d="M5 12h14M12 5l7 7-7 7" />
+    </svg>
+  )
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     </svg>
   )
 }

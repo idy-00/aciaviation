@@ -1,41 +1,41 @@
-/* ── Expertise Hero — split photo/texte, fond blanc côté texte ── */
+/* ── Expertise Hero — image pleine largeur + texte en overlay en bas ── */
 .expertise-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 520px;
   margin-top: 68px;
+  position: relative;
+  width: 100%;
 }
 
-/* Colonne image */
-.expertise-hero-img-col {
+.expertise-hero-img-wrap {
   position: relative;
+  width: 100%;
   overflow: hidden;
 }
 .expertise-hero-img {
   width: 100%;
-  height: 100%;
+  height: 540px;
   object-fit: cover;
   object-position: center 65%;
   display: block;
 }
-/* Ligne dorée verticale sur le bord droit */
-.expertise-hero-line {
+/* Overlay dégradé — transparent en haut, navy en bas */
+.expertise-hero-overlay {
   position: absolute;
-  top: 10%;
-  right: 0;
-  width: 3px;
-  height: 80%;
-  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,20,46,0.0) 0%,
+    rgba(8,20,46,0.25) 45%,
+    rgba(8,20,46,0.82) 100%
+  );
 }
 
-/* Colonne texte — fond BLANC */
+/* Bloc texte positionné en bas de l'image */
 .expertise-hero-text-col {
-  background: var(--white);
-  padding: 56px 56px 56px 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0 48px;
 }
 
 /* Breadcrumb */
@@ -48,16 +48,16 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 28px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 16px;
 }
 .expertise-hero-breadcrumb a {
-  color: var(--text-light);
+  color: rgba(255,255,255,0.45);
   text-decoration: none;
   transition: color 0.2s;
 }
-.expertise-hero-breadcrumb a:hover { color: var(--blue); }
-.expertise-hero-breadcrumb span:last-child { color: var(--text-mid); }
+.expertise-hero-breadcrumb a:hover { color: rgba(255,255,255,0.85); }
+.expertise-hero-breadcrumb span:last-child { color: rgba(255,255,255,0.7); }
 
 /* Eyebrow */
 .expertise-hero-eyebrow {
@@ -70,7 +70,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .expertise-hero-dot {
   width: 6px;
@@ -85,24 +85,31 @@
   50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0); }
 }
 
-/* Titre — navy sur blanc */
+/* Titre */
 .expertise-hero-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 800;
-  color: var(--navy);
-  line-height: 1.15;
-  margin-bottom: 20px;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
+  max-width: 640px;
 }
 
-/* Sous-titre */
+/* Sous-titre + badges sur la même ligne */
+.expertise-hero-bottom {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
 .expertise-hero-sub {
   font-size: 0.95rem;
-  color: var(--text-mid);
-  line-height: 1.75;
-  margin-bottom: 32px;
-  max-width: 420px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.7;
+  max-width: 480px;
 }
 
 /* Badges */
@@ -110,6 +117,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  flex-shrink: 0;
 }
 .expertise-hero-badge {
   font-family: 'Montserrat', sans-serif;
@@ -117,40 +125,21 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--navy);
-  border: 1px solid rgba(8,20,46,0.25);
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
   padding: 5px 12px;
   border-radius: 2px;
 }
 
-/* Trait doré en bas du bloc texte */
-.expertise-hero-text-col::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(to right, var(--gold) 0%, transparent 60%);
-}
-.expertise-hero-text-col { position: relative; }
-
 /* Responsive */
 @media (max-width: 900px) {
-  .expertise-hero {
-    grid-template-columns: 1fr;
-    margin-top: 62px;
-  }
-  .expertise-hero-img-col {
-    height: 280px;
-  }
-  .expertise-hero-line { display: none; }
-  .expertise-hero-text-col {
-    padding: 40px 28px;
-  }
+  .expertise-hero { margin-top: 62px; }
+  .expertise-hero-img { height: 420px; }
+  .expertise-hero-text-col { padding-bottom: 32px; }
+  .expertise-hero-title { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .expertise-hero-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 @media (max-width: 600px) {
-  .expertise-hero-img-col { height: 220px; }
-  .expertise-hero-text-col { padding: 32px 20px; }
+  .expertise-hero-img { height: 320px; }
+  .expertise-hero-text-col { padding-bottom: 24px; }
 }

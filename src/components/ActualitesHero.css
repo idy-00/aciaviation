@@ -1,137 +1,98 @@
-/* ── Actualités Hero — image + clip-path diagonal + card centrée ── */
+/* ── Actualités Hero — éditorial, texte en bas à gauche ── */
 .actu-hero {
   margin-top: 68px;
   position: relative;
+  width: 100%;
 }
 
 .actu-hero-img-wrap {
   position: relative;
   width: 100%;
-  /* Découpe diagonale en bas */
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  overflow: hidden;
 }
 
 .actu-hero-img {
   width: 100%;
-  height: auto;
-  min-height: 360px;
+  height: 480px;
   object-fit: cover;
   object-position: center 45%;
   display: block;
 }
 
-/* Card semi-transparente centrée sur l'image */
-.actu-hero-card {
+/* Dégradé fort en bas pour que le texte soit lisible */
+.actu-hero-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(8, 20, 46, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-top: 2px solid var(--gold);
-  padding: 36px 48px;
-  text-align: center;
-  min-width: 360px;
-  max-width: 560px;
-  width: 90%;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,20,46,0.0) 0%,
+    rgba(8,20,46,0.20) 40%,
+    rgba(8,20,46,0.78) 100%
+  );
 }
 
-/* Breadcrumb */
+/* Texte aligné à gauche en bas — style journal */
+.actu-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0 44px;
+}
+
 .actu-hero-breadcrumb {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 18px;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 14px;
 }
 .actu-hero-breadcrumb a {
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.40);
   text-decoration: none;
   transition: color 0.2s;
 }
-.actu-hero-breadcrumb a:hover { color: rgba(255,255,255,0.85); }
-.actu-hero-breadcrumb span:last-child { color: rgba(255,255,255,0.7); }
+.actu-hero-breadcrumb a:hover { color: rgba(255,255,255,0.75); }
 
-/* Eyebrow */
-.actu-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
+/* Filet doré horizontal avant le titre — signature éditoriale */
+.actu-hero-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
   margin-bottom: 16px;
 }
-.actu-hero-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-  animation: pulse-actu 2.4s ease-in-out infinite;
-}
-@keyframes pulse-actu {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.6); }
-  50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0); }
-}
 
-/* Titre */
 .actu-hero-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
+  max-width: 640px;
 }
 
-/* Sous-titre */
 .actu-hero-sub {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.72);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
   line-height: 1.7;
-  font-style: italic;
+  max-width: 520px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .actu-hero { margin-top: 62px; }
-  .actu-hero-img-wrap {
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-  }
-  .actu-hero-img { min-height: 280px; }
-  .actu-hero-card {
-    padding: 28px 28px;
-    min-width: unset;
-  }
+  .actu-hero-img { height: 360px; }
+  .actu-hero-content { padding-bottom: 28px; }
 }
 @media (max-width: 600px) {
-  .actu-hero-img-wrap { clip-path: none; }
-  .actu-hero-card {
-    position: relative;
-    top: unset; left: unset;
-    transform: none;
-    background: var(--navy);
-    border-top: 3px solid var(--gold);
-    backdrop-filter: none;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-  }
+  .actu-hero-img { height: 280px; }
+  .actu-hero-content { padding-bottom: 20px; }
+  .actu-hero-title { font-size: 1.6rem; }
 }
