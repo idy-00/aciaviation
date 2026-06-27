@@ -82,7 +82,13 @@
 }
 
 @media (max-width: 900px) {
-  .clients-hero { margin-top: 62px; padding: 64px 0 52px; }
-  .clients-hero-inner { grid-template-columns: 1fr; gap: 24px; }
-  .clients-hero-rule { margin-top: 40px; }
+  .clients-hero { margin-top: 62px; padding: 56px 0 44px; }
+  .clients-hero-inner { grid-template-columns: 1fr; gap: 20px; }
+  .clients-hero-rule { margin-top: 32px; }
+  .clients-hero-title { font-size: clamp(1.8rem, 5vw, 2.6rem); }
+}
+@media (max-width: 480px) {
+  .clients-hero { padding: 44px 0 36px; }
+  .clients-hero-title { font-size: 1.7rem; }
+  .clients-hero-sub { font-size: 0.95rem; padding-left: 14px; }
 }

@@ -58,5 +58,13 @@
 
 @media (max-width: 1024px) {
   .missions-grid { grid-template-columns: 1fr; gap: 40px; }
-  .missions-img-col img { height: 280px; }
+  .missions-img-col img { height: 240px; }
+}
+@media (max-width: 480px) {
+  .missions-img-col img { height: 200px; }
+  .mission-item { gap: 12px; }
+  .mission-icon { width: 34px; height: 34px; border-radius: 6px; }
+  .mission-item h4 { font-size: 12px; }
+  .mission-item p { font-size: 12px; }
+  .missions-list { gap: 14px; }
 }

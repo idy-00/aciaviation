@@ -46,5 +46,11 @@
   .partenaires-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 600px) {
-  .partenaires-grid { grid-template-columns: repeat(2, 1fr); }
+  .partenaires-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .partenaire-slot { height: 76px; }
+  .partenaire-logo { max-height: 48px; max-width: 110px; }
+}
+@media (max-width: 380px) {
+  .partenaires-grid { gap: 8px; }
+  .partenaire-slot { height: 68px; padding: 8px 10px; }
 }

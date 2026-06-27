@@ -100,6 +100,15 @@
   .value-card--featured { grid-row: unset; }
 }
 @media (max-width: 600px) {
-  .values-grid { grid-template-columns: 1fr; }
-  .value-card { padding: 28px 24px; }
+  /* 2 colonnes sur mobile — featured reste en tête pleine largeur */
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .value-card--featured { grid-column: 1 / -1; }
+  .value-card { padding: 22px 18px; }
+  .value-card--featured { padding: 28px 22px; }
+  .value-num { font-size: 1.8rem; margin-bottom: 10px; }
+  .value-card--featured .value-num { font-size: 2.8rem; }
+  .value-card h3 { font-size: 12px; }
+  .value-card--featured h3 { font-size: 15px; }
+  .value-card p { font-size: 11.5px; }
+  .value-icon { width: 36px; height: 36px; margin-bottom: 14px; }
 }

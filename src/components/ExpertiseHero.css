@@ -134,12 +134,15 @@
 /* Responsive */
 @media (max-width: 900px) {
   .expertise-hero { margin-top: 62px; }
-  .expertise-hero-img { height: 420px; }
-  .expertise-hero-text-col { padding-bottom: 32px; }
+  .expertise-hero-img { height: 380px; }
+  .expertise-hero-text-col { padding-bottom: 28px; }
   .expertise-hero-title { font-size: clamp(1.6rem, 4vw, 2.2rem); }
   .expertise-hero-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
-@media (max-width: 600px) {
-  .expertise-hero-img { height: 320px; }
-  .expertise-hero-text-col { padding-bottom: 24px; }
+@media (max-width: 480px) {
+  .expertise-hero-img { height: 260px; object-position: center 55%; }
+  .expertise-hero-text-col { padding-bottom: 20px; }
+  .expertise-hero-title { font-size: 1.5rem; }
+  .expertise-hero-sub { font-size: 0.88rem; }
+  .expertise-hero-breadcrumb { margin-bottom: 10px; }
 }

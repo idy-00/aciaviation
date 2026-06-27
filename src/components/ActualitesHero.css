@@ -88,11 +88,12 @@
 /* Responsive */
 @media (max-width: 900px) {
   .actu-hero { margin-top: 62px; }
-  .actu-hero-img { height: 360px; }
+  .actu-hero-img { height: 320px; }
   .actu-hero-content { padding-bottom: 28px; }
 }
-@media (max-width: 600px) {
-  .actu-hero-img { height: 280px; }
-  .actu-hero-content { padding-bottom: 20px; }
-  .actu-hero-title { font-size: 1.6rem; }
+@media (max-width: 480px) {
+  .actu-hero-img { height: 240px; object-position: center 40%; }
+  .actu-hero-content { padding-bottom: 18px; }
+  .actu-hero-title { font-size: 1.5rem; }
+  .actu-hero-sub { font-size: 0.88rem; }
 }

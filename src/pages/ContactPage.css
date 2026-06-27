@@ -1,8 +1,14 @@
 /* Header navy plein — sans photo, identité propre à Contact */
 .contact-page-header {
   background: var(--navy);
-  padding: 100px 0 52px; /* 100px : espace sous navbar fixe */
+  padding: 100px 0 52px;
   border-bottom: 3px solid var(--gold);
+}
+
+@media (max-width: 480px) {
+  .contact-page-header { padding: 80px 0 36px; }
+  .contact-page-title { font-size: 1.5rem; }
+  .contact-page-sub { font-size: 0.9rem; }
 }
 
 .contact-page-breadcrumb {
