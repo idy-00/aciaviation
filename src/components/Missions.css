@@ -9,11 +9,12 @@
 
 .missions-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 72px;
   align-items: center;
 }
 
+/* ── Liste missions ── */
 .missions-list {
   display: flex;
   flex-direction: column;
@@ -48,23 +49,160 @@
   line-height: 1.65;
 }
 
-.missions-img-col img {
-  width: 100%;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 3px;
-  display: block;
+/* ── Colonne illustration ── */
+.missions-illus-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ── Wrapper illustration ── */
+.mi-wrap {
+  position: relative;
+  width: 360px;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+/* Grille de points SVG en fond */
+.mi-dots,
+.mi-connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.mi-connectors { z-index: 1; }
+
+/* Nœud central */
+.mi-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 112px;
+  height: 112px;
+  z-index: 3;
+}
+.mi-center-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue) 0%, #0b3a7a 100%);
+  box-shadow: 0 8px 32px rgba(24,120,192,0.35);
+}
+.mi-center-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mi-center-badge {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Nœuds orbite */
+.mi-node {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.mi-node > :first-child {
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  border: 1.5px solid rgba(24,120,192,0.22);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  box-shadow: 0 4px 16px rgba(8,20,46,0.09);
+}
+.mi-node > span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* Positions des 4 nœuds */
+.mi-node--tl { top: 30px;  left: 30px;  }
+.mi-node--tr { top: 30px;  right: 30px; }
+.mi-node--bl { bottom: 50px; left: 30px;  }
+.mi-node--br { bottom: 50px; right: 30px; }
+
+/* Tags référentiels */
+.mi-tag {
+  position: absolute;
+  z-index: 3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  box-shadow: 0 2px 8px rgba(8,20,46,0.07);
+}
+.mi-tag--left   { left: 0;   top: 50%;  transform: translateY(-50%); }
+.mi-tag--right  { right: 0;  top: 50%;  transform: translateY(-50%); }
+.mi-tag--bottom { bottom: 4px; left: 50%; transform: translateX(-50%); }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .mi-wrap { width: 300px; height: 340px; }
+}
 @media (max-width: 1024px) {
-  .missions-grid { grid-template-columns: 1fr; gap: 40px; }
-  .missions-img-col img { height: 240px; }
+  .missions-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .missions-illus-col { order: -1; }
+  .mi-wrap { width: 300px; height: 300px; }
+  .mi-center { width: 90px; height: 90px; }
+  .mi-node > :first-child { width: 44px; height: 44px; border-radius: 10px; }
+  .mi-node--tl { top: 20px;  left: 20px;  }
+  .mi-node--tr { top: 20px;  right: 20px; }
+  .mi-node--bl { bottom: 40px; left: 20px;  }
+  .mi-node--br { bottom: 40px; right: 20px; }
 }
 @media (max-width: 480px) {
-  .missions-img-col img { height: 200px; }
   .mission-item { gap: 12px; }
   .mission-icon { width: 34px; height: 34px; border-radius: 6px; }
   .mission-item h4 { font-size: 12px; }
-  .mission-item p { font-size: 12px; }
-  .missions-list { gap: 14px; }
+  .mission-item p  { font-size: 12px; }
+  .missions-list   { gap: 14px; }
+  .mi-wrap { width: 260px; height: 260px; }
+  .mi-center { width: 76px; height: 76px; }
+  .mi-node > :first-child { width: 38px; height: 38px; border-radius: 8px; }
+  .mi-node span { display: none; }
+  .mi-node--tl { top: 12px;  left: 12px;  }
+  .mi-node--tr { top: 12px;  right: 12px; }
+  .mi-node--bl { bottom: 28px; left: 12px;  }
+  .mi-node--br { bottom: 28px; right: 12px; }
+  .mi-tag { font-size: 8px; padding: 3px 7px; }
 }

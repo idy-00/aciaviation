@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { actualites } from '../data/actualites'
+import GalerieBtn from '../components/GalerieBtn'
 import './ActualiteDetailPage.css'
 
 function formatDate(iso) {
@@ -47,6 +48,8 @@ export default function ActualiteDetailPage() {
               <p key={i}>{para}</p>
             ))}
           </div>
+
+          <GalerieBtn images={article.galerie} />
 
           <Link to="/actualites" className="detail-back">← Retour aux actualités</Link>
         </article>

@@ -2,8 +2,8 @@ import './Clients.css'
 import '../components/ui.css'
 import useFadeUp from './useFadeUp'
 import { Building2, PlaneTakeoff, Package, Truck, GraduationCap } from 'lucide-react'
-import clientsMeeting from '/clients-meeting.jpg'
-import clientsHandshake from '/clients-handshake.jpg'
+import clientsMeeting from '/galerie/sommet-2013-5.jpg'
+import clientsHandshake from '/galerie/sommet-2013-1.jpg'
 
 const clients = [
   { Icon: Building2, title: "Administrations de l'Aviation Civile", desc: "Organismes de réglementation, supervision, mise en oeuvre et coordination." },
@@ -43,8 +43,8 @@ export default function Clients() {
         </div>
 
         <div className="clients-img-col">
-          <img src={clientsMeeting} alt="Réunion de professionnels de l'aviation" loading="lazy" />
-          <img src={clientsHandshake} alt="Partenariat et accord professionnel" loading="lazy" style={{marginTop: '16px'}} />
+          <img src={clientsMeeting} alt="Panel de dirigeants au Sommet ACI 2013" loading="lazy" />
+          <img src={clientsHandshake} alt="Délégués au Sommet ACI Dakar 2013" loading="lazy" style={{marginTop: '16px'}} />
         </div>
       </div>
     </section>

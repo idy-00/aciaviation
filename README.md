@@ -36,12 +36,68 @@ Ouvrir le fichier et copier ce bloc à la fin du tableau (avant le `]` final) :
 - La `date` est au format `AAAA-MM-JJ`
 - L'`image` doit être déposée dans le dossier `public/` avant de publier
 
-### Ajouter une image
+### Ajouter une image de couverture
 
 1. Glisser l'image dans le dossier `public/` à la racine du projet
 2. Dans le fichier `actualites.js`, mettre `image: '/nom-du-fichier.jpg'`
 - Formats acceptés : `.jpg`, `.jpeg`, `.webp`, `.png`
 - Taille recommandée : largeur 1200px minimum, moins de 500 Ko
+
+---
+
+## Ajouter des photos à la galerie d'un événement
+
+Chaque article peut afficher une galerie de photos accessibles via un bouton **"Voir les X photos"** sur la page de l'article.
+
+### Étape 1 — Déposer les photos
+
+Placer toutes les photos dans le dossier `public/galerie/` :
+
+```
+public/
+└── galerie/
+    ├── mon-evenement-1.jpg
+    ├── mon-evenement-2.jpg
+    └── mon-evenement-3.jpg
+```
+
+- Nommer les fichiers de façon claire : `colloque-2011-01.jpg`, `sommet-2013-05.jpg`, etc.
+- Formats acceptés : `.jpg`, `.jpeg`, `.webp`, `.png`
+- Taille recommandée : largeur 1200px minimum, moins de 400 Ko par photo
+
+### Étape 2 — Déclarer les photos dans actualites.js
+
+Dans `src/data/actualites.js`, trouver l'article concerné et remplir le tableau `galerie` :
+
+```js
+{
+  slug: 'colloque-regional-2011',
+  titre: "1er Colloque Régional...",
+  date: '2011-11-06',
+  categorie: 'Colloque',
+  image: '/galerie/colloque-2011-01.jpg',   // photo de couverture (carte + hero)
+  galerie: [
+    '/galerie/colloque-2011-01.jpg',
+    '/galerie/colloque-2011-02.jpg',
+    '/galerie/colloque-2011-03.jpg',
+    // ajouter autant de photos que nécessaire
+  ],
+  contenu: [ ... ],
+},
+```
+
+> **Si `galerie` est vide (`[]`) ou absent**, le bouton "Voir les photos" n'apparaît pas — c'est normal.
+
+### Étape 3 — Publier
+
+```bash
+git add public/galerie/
+git add src/data/actualites.js
+git commit -m "feat(galerie): ajout photos [nom evenement]"
+git push
+```
+
+---
 
 ### Modifier un article existant
 
@@ -72,10 +128,12 @@ Le site se met à jour automatiquement sur Cloudflare Pages en 1-2 minutes aprè
 
 ```
 aci-web/
-├── public/                  # Images et fichiers statiques
+├── public/
+│   ├── galerie/             # Photos des événements (galerie lightbox)
+│   └── ...                  # Images de couverture et logos
 ├── src/
 │   ├── data/
-│   │   └── actualites.js    ← SEUL fichier à modifier pour les actualités
+│   │   └── actualites.js    ← SEUL fichier à modifier pour les actualités et galeries
 │   ├── pages/               # Pages du site
 │   ├── components/          # Composants réutilisables
 │   └── App.jsx              # Routes de l'application

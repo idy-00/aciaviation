@@ -6,8 +6,8 @@ export default function ActualitesHero() {
     <section className="actu-hero" aria-label="Actualités">
       <div className="actu-hero-img-wrap">
         <img
-          src="/actualites-hero.jpg"
-          alt="Séminaire et conférence professionnelle"
+          src="/galerie/sommet-2013-6.jpg"
+          alt="Participants au Sommet ACI Dakar 2013"
           className="actu-hero-img"
         />
         <div className="actu-hero-overlay" aria-hidden="true" />
