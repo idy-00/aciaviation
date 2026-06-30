@@ -24,10 +24,10 @@ export default function About() {
             <strong>Aviation Consulting International Ltd</strong> est un cabinet de conseil spécialisé dans le transport aérien, principalement dans les domaines de la sécurité et la sûreté de l&apos;aviation civile.
           </p>
           <p>
-            Notre équipe s&apos;appuie sur des experts et professionnels de haut niveau jouissant d&apos;une large expérience en aviation, acquise au sein d&apos;organismes spécialisés et internationalement reconnus.
+            Notre équipe s&apos;appuie sur les compétences des experts et professionnels de haut niveau avec une large expérience en aviation, acquise au sein d&apos;organismes spécialisés et internationalement reconnus de l&apos;industrie du transport.
           </p>
           <p>
-            Le regroupement de professionnels dans des domaines variés de l&apos;aviation opérationnelle permet d&apos;associer les compétences, de garantir des synergies et d&apos;offrir la plus large gamme de services.
+            Le regroupement de professionnels dans des domaines variés de l&apos;aviation opérationnelle nous a donc permis d&apos;associer nos compétences, de garantir nos synergies afin de pouvoir offrir la plus large gamme de services.
           </p>
 
           <blockquote className="about-vision">
