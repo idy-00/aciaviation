@@ -1,0 +1,20 @@
+.quisommes-section { background: var(--bg); }
+
+.quisommes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.quisommes-right p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.quisommes-right p:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .quisommes-layout { grid-template-columns: 1fr; gap: 24px; }
+}

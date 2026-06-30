@@ -61,7 +61,6 @@ export const actualites = [
       '/galerie/sommet-2013-13.jpg',
       '/galerie/sommet-2013-14.jpg',
       '/galerie/sommet-2013-15.jpg',
-      '/galerie/sommet-2013-16.jpg',
       '/galerie/sommet-2013-17.jpg',
       '/galerie/sommet-2013-18.jpg',
       '/galerie/sommet-2013-19.jpg',

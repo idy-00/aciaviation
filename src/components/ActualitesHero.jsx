@@ -6,7 +6,7 @@ export default function ActualitesHero() {
     <section className="actu-hero" aria-label="Actualités">
       <div className="actu-hero-img-wrap">
         <img
-          src="/galerie/sommet-2013-6.jpg"
+          src="/galerie/sommet-2013-16.jpg"
           alt="Participants au Sommet ACI Dakar 2013"
           className="actu-hero-img"
         />

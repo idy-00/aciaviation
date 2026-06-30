@@ -121,7 +121,7 @@ export default function Missions() {
           <h2 className="section-title">Proposer des conseils<br />de haute qualité</h2>
           <div className="divider" />
           <p className="missions-lead">
-            Nos missions consistent principalement à proposer des conseils de haute qualité en sécurité et en sûreté du transport aérien, en ayant comme référentiel les normes exigeantes de qualité de ce secteur.
+            Proposer des conseils et de l'accompagnement en adéquation avec les besoins de votre organisation
           </p>
           <div className="missions-list fade-up" ref={ref}>
             {missions.map(({ Icon, title, desc }) => (

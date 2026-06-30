@@ -45,7 +45,7 @@ export default function Expertise() {
           <div className="eyebrow eyebrow-gold">Domaines d&apos;expertise</div>
           <h2 className="section-title">Une gamme complète<br />de compétences aéronautiques</h2>
           <p className="section-lead">
-            Aviation Consulting International propose une large gamme de services en Audits Techniques, Évaluation, Organisation, Conseils, Formation et Accompagnement.
+            Une large gamme de services et de compétences dans des domaines à la fois multiples et variés de l'industrie du transport aérien
           </p>
         </div>
 

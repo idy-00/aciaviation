@@ -35,9 +35,9 @@
   line-height: 0;
 }
 .nav-logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
-  max-width: 300px;
+  max-width: 320px;
   object-fit: contain;
   display: block;
 }
@@ -251,5 +251,5 @@
 }
 
 @media (max-width: 600px) {
-  .nav-logo-img { height: 42px; max-width: 220px; }
+  .nav-logo-img { height: 48px; max-width: 240px; }
 }
