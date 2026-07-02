@@ -1,5 +1,6 @@
 .hero-section {
-  background: var(--white);
+  background: #c9e8f7;
+  margin-top: 68px;
 }
 
 /* ── Bandeau image : hauteur naturelle = avion complet visible ── */
@@ -162,7 +163,7 @@
     min-height: unset;
     object-fit: contain;
     object-position: center;
-    background: var(--white);
+    background: #c9e8f7;
   }
 }
 @media (max-width: 480px) {
